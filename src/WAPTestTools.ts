@@ -19,19 +19,20 @@ export class WAPTestTools {
                     }
                 });
                 stream.on('close', () => {
-                    let ab: ArrayBuffer = new ArrayBuffer(data.byteLength);
-                    try {
-                        let dv: DataView = new DataView(ab);
-                        data.forEach((byte: number, index: number) => {
-                            dv.setInt8(index, byte);
-                        });
-                    }
-                    catch (ex) {
-                        reject(ex);
-                        return;
-                    }
+                    resolve(data.buffer);
+                    // let ab: ArrayBuffer = new ArrayBuffer(data.byteLength);
+                    // try {
+                    //     let dv: DataView = new DataView(ab);
+                    //     data.forEach((byte: number, index: number) => {
+                    //         dv.setInt8(index, byte);
+                    //     });
+                    // }
+                    // catch (ex) {
+                    //     reject(ex);
+                    //     return;
+                    // }
 
-                    resolve(ab);
+                    // resolve(ab);
                 });
             }).catch(reject);
         });
