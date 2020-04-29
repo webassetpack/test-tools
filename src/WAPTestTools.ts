@@ -18,7 +18,7 @@ export class WAPTestTools {
                         data = Buffer.concat([ data, chunk ]);
                     }
                 });
-                stream.on('finish', () => {
+                stream.on('end', () => {
                     resolve(data.buffer);
                     // let ab: ArrayBuffer = new ArrayBuffer(data.byteLength);
                     // try {
