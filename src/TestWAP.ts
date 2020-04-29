@@ -17,16 +17,19 @@ export class TestWAP extends WebAssetPack {
         for (let i: number = 0; i < data.length; i++) {
             let byte: number = data[i];
             
-            output += byte.toString(16);
-
-            if (i > 0 && i % 17 === 0) {
-                output += '\n';
-                continue;
+            let char: string = byte.toString(16);
+            if (char.length === 1) {
+                char = '0' + char;
             }
 
-            if (i > 0 && i % 3 === 0) {
+            if (i > 0 && i % 16 === 0) {
+                output += '\n';
+            }
+            else if (i > 0 && i % 2 === 0) {
                 output += '\t';
             }
+
+            output += char
         }
 
         return output;
