@@ -19,13 +19,13 @@ export class TestWAP extends WebAssetPack {
             
             output += byte.toString(16);
 
-            if (i > 0 && i % 16 === 0) {
+            if (i > 0 && i % 17 === 0) {
                 output += '\n';
                 continue;
             }
 
-            if (i > 0 && i % 2 === 0) {
-                output += ' ';
+            if (i > 0 && i % 3 === 0) {
+                output += '\t';
             }
         }
 
