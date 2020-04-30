@@ -12,13 +12,13 @@ export class TestWAP extends WebAssetPack {
 
     public hexdump(path: string): string {
         let data: Uint8Array = this._getData(path);
+        let view: DataView = new DataView(data.buffer);
         let output: string = '';
-
-        for (let i: number = 0; i < data.length; i++) {
-            let byte: number = data[i];
-            
+        for (let i: number = 0; i <= view.byteLength - 2; i += 2) {
+            let byte: number = view.getUint16(i, true);
             let char: string = byte.toString(16);
-            if (char.length === 1) {
+
+            while (char.length < 4) {
                 char = '0' + char;
             }
 
@@ -28,10 +28,8 @@ export class TestWAP extends WebAssetPack {
             else if (i > 0 && i % 2 === 0) {
                 output += '\t';
             }
-
-            output += char
+            output += char;
         }
-
         return output;
     }
 }
