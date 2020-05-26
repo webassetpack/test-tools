@@ -1,6 +1,6 @@
 {
   "name": "@wap/test-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Web Asset Packs",
   "main": "lib/api.js",
   "types": "lib/api.d.ts",
