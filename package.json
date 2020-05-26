@@ -1,6 +1,6 @@
 {
   "name": "@wap/test-tools",
-  "version": "0.0.0-alpha.0",
+  "version": "0.0.1",
   "description": "Web Asset Packs",
   "main": "lib/api.js",
   "types": "lib/api.d.ts",
@@ -37,7 +37,7 @@
   "dependencies": {
     "@totalpave/interfaces": "1.0.0",
     "@types/node": "12.12.37",
-    "@wap/cli": "git+https://github.com/webassetpack/cli.git",
-    "@wap/runtime": "git+https://github.com/webassetpack/runtime.git"
+    "@wap/cli": "0.0.1",
+    "@wap/runtime": "0.0.2"
   }
 }
